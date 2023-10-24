@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block bladzijde %}
+Overzicht Projecten
+{% endblock bladzijde %}
+
+{% block content %}
+
+<div>
+<a class="btn btn-primary" href="/projectinvoeren" role="button" style="padding:5px; margin:20px auto;">Invoeren project</a>
+</div>
+
+<div>
+<table class="table table-striped table-sm">
+ <thead>
+    <tr>
+    <th scope="col">Selecteer</th>
+    <th scope="col">Projectnummer</th>
+    <th scope="col">Projectnaam</th>
+    <th scope="col">Plaats</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for project in alle_projecten %}
+    <tr>
+    <td>
+    <input type="checkbox" value="{{ project.id }}" name="id"/>
+    </td>
+    <td>
+    {{ project.projectnummer }}
+    </td>
+    <td>
+    {{ project.projectnaam }}
+    </td>
+    <td>
+    {{ project.plaats }}
+    </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% endblock content %}
+

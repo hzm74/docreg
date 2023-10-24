@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block bladzijde %}
+Status-beheer
+{% endblock bladzijde %}
+
+
+{% block content %}
+
+<div class="table-responsive">
+<form method="POST" action="{# url 'delete' #}">
+{% csrf_token %}
+<table class="table table-striped table-sm">
+ <thead>
+    <tr>
+    <th scope="col">Selecteer</th>
+    <th scope="col">Nummer</th>
+    <th scope="col">Documentnaam</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for vloer in alle_vloeren %}
+    <tr>
+    <td>
+    <input type="checkbox" value="{{ vloer.id }}" name="id"/>
+    </td>
+    <td>
+    {{ vloer.nummer }}
+    </td>
+    <td>
+    {{ vloer.documentnaam }}
+    </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<button type="submit"  class="btn btn-primary">Doe iets.</button>
+</form>
+</div>
+
+{% endblock content %}
+

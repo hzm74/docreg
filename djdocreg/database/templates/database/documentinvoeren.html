@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+<!-- 
+<!doctype html>
+<html >
+<head>
+<meta charset= "utf-8">
+<meta name= "viewport" content= "width=device-width, initial-scale=1,  shrink-to-fit=no">
+<link rel= "stylesheet" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src= "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js">
+</script>
+<link rel= "stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-     datepicker/1.9.0/css/bootstrap-datepicker.min.css" />
+<script src= "https://code.jquery.com/jquery-3.5.1.slim.min.js">
+</script>
+<script src= "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js">
+</script>
+<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" >
+</script>
+<script src= "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js" >
+</script>
+<title>Documenten invoeren</title>
+</head>
+<body>
+-->
+
+{% block bladzijde %}
+Document invoeren
+{% endblock bladzijde %}
+
+{% block content %}
+
+<!--
+<br>
+<div class="form">
+<form action="{# url 'documentinvoeren' #}" method="get">
+
+<div class="form-group">
+<label for="label-docnaam"> Documentnaam: </label>
+<input type="text" class="form-control" id="label-docnaam" name="documentnaam"> 
+</div>
+
+<div class="form-group">
+<label for="label-datum1"> Datum tekening: </label>
+<input type="text" class="form-control" id="label-datum1" name="datum1" placeholder="datum tekening">
+</div>
+
+<input type="submit" value="Opslaan" />
+</form>
+</div>
+-->
+
+<div id='invoeren'>
+<form action="" enctype="multipart/form-data" method="post">
+{% csrf_token %}
+{{ formvloeren.as_table }}
+<br></br>
+<!-- {# formdatumdocument.as_table #} -->
+<br/><br/>
+<div>
+    <b>Datum</b>
+     <input type="date" name="nieuwe_datum">
+</div>
+<button type="submit" class="btn btn-primary">Opslaan</button>
+</form>
+</div>
+
+<!--
+<script type="text/javascript">
+$(document).ready(function(){
+$("#label-datum1").datepicker({
+"format": "dd-mm-yyyy",
+"startDate": "-1d",
+});
+});
+</script>
+-->
+
+{% endblock content %}
+
+

@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block bladzijde %}
+Document nieuwe versie
+{% endblock bladzijde %}
+
+{% block content %}
+
+<div class="table-responsive">
+    <form method="POST" action="{% url 'update_document' %}">
+    {% csrf_token %}
+    <table class="table table-striped table-sm">
+     <thead>
+        <tr>
+        <th scope="col">Selecteer</th>
+        <th scope="col">Bedrijfsnaam</th>
+        <th scope="col">Nummer</th>
+        <th scope="col">Documentnaam</th>
+        <th scope="col">Datum</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for vl in alle_vloeren_laatste %}
+        <tr>
+        <td>
+        <input type="checkbox" value="{{ vl.id }}" name="id"/>
+        </td>
+        <td>
+        {{ vl.bedrijfsnaam }}
+        </td>
+        <td>
+        {{ vl.nummer }}
+        </td>
+        <td>
+        {{ vl.documentnaam }}
+        </td>
+        <td>
+        {{ vl.laatste }}
+        </td>
+        {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+    <div>
+        <b>Nieuwe datum</b>
+         <input type="date" name="nieuwe datum">
+    </div>
+    <div>
+    <button type="submit" class="btn btn-primary">Opslaan</button>
+    </div> 
+    </form>
+    </div>
+
+    <!-- <div class="table-responsive">
+        <form method="POST" action="{% url 'update_document' %}">
+        {% csrf_token %}
+        <table class="table table-striped table-sm">
+         <thead>
+            <tr>
+            <th scope="col">Selecteer</th>
+            <th scope="col">Bedrijfsnaam</th>
+            <th scope="col">Nummer</th>
+            <th scope="col">Documentnaam</th>
+            <th scope="col">Datum</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for vl in alle_vloeren_laatste %}
+            <tr>
+            <td>
+            <input type="checkbox" value="{{ vl.id }}" name="id"/>
+            </td>
+            {% for document in vl.datum_document_set.all %}
+            <td>
+            {{ vl.bedrijfsnaam }}
+            </td>
+            <td>
+            {{ vl.nummer }}
+            </td>
+            <td>
+            {{ vl.documentnaam }}
+            </td>
+            <td>
+            {{ document.datum }}
+            </td>
+            {% endfor %}
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div>
+            <b>Nieuwe datum</b>
+             <input type="date" name="nieuwe datum">
+        </div>
+        <div>
+        <button type="submit" class="btn btn-primary">Opslaan</button>
+        </div> 
+        </form>
+        </div> -->
+
+<!-- <div id='updaten'>
+<form action="" enctype="multipart/form-data" method="post">
+{# csrf_token #}
+<br></br>
+{{ formdatumdocument.as_table }}
+<br/><br/>
+<button type="submit" class="btn btn-primary">Opslaan</button>
+</form>
+</div> -->
+
+
+{% endblock content %}
+
+

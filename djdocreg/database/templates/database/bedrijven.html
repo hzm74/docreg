@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block bladzijde %}
+Overzicht Bedrijven
+{% endblock bladzijde %}
+
+{% block content %}
+
+<div>
+<a class="btn btn-primary" href="/bedrijfinvoeren" role="button" style="padding:5px; margin:20px auto;">Invoeren bedrijf</a>
+</div>
+<div class="table-responsive">
+<form method="POST" action="{% url 'delete_bedrijf' %}">
+{% csrf_token %}
+<table class="table table-striped table-sm">
+ <thead>
+    <tr>
+    <th scope="col">Selecteer</th>
+    <th scope="col">Bedrijfsnaam</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for bedrijf in alle_bedrijven %}
+    <tr>
+    <td>
+    <input type="checkbox" value="{{ bedrijf.id }}" name="id"/>
+    </td>
+    <td>
+    {{ bedrijf.bedrijfsnaam }}
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<button type="submit"  class="btn btn-primary">Verwijder.</button>
+</form>
+</div>
+
+{% endblock content %}
+

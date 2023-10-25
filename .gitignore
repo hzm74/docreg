@@ -6975,3 +6975,4 @@ djdocreg/database/__pycache__/views.cpython-310.pyc
 .docreg/Scripts/pip3.exe
 .docreg/Scripts/python.exe
 .docreg/Scripts/pythonw.exe
+djdocreg/db.sqlite3

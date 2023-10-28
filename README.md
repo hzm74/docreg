@@ -1,12 +1,13 @@
-<h3 align="left">Hi 👋, I'm Hans van Neerven</h1>
-<h3 align="left">A passionate developer from the Netherlands</h3>
+<h4 align="left">Hi 👋, I'm Hans van Neerven</h4>
+<h4 align="left">A passionate developer from the Netherlands</h4>
 
 <p>
   Django is my project to manage documents.
   For example an architect as a document/drawing which has to be approved by a builder-company, constructor and other firms.
   The architect sends multiple documents and wants to keep track if the documents are approved by the given time.
   
-  I wanna do this with the help of a postgres database and the help of django.
+  I wanna do this with the help of a database and the help of django.
+  The web-based interface is in the dutch language.
 </p>
 
 <p>

@@ -1,5 +1,5 @@
-<h3 align="center">Hi 👋, I'm Hans van Neerven</h1>
-<h3 align="center">A passionate developer from the Netherlands</h3>
+<h3 align="left">Hi 👋, I'm Hans van Neerven</h1>
+<h3 align="left">A passionate developer from the Netherlands</h3>
 
 <p>
   Django is my project to manage documents.
@@ -20,3 +20,8 @@
 - 🌱 I’m currently learning **Django and javascript**
 
 I'm a self-learning hobbyist with a passion for programming. I do this in the free spare time i have.
+
+![afbeelding](https://github.com/hzm74/docreg/assets/58707700/e73a54e4-e586-4325-a3fc-56a2195af2cd)
+
+![afbeelding](https://github.com/hzm74/docreg/assets/58707700/dcd600eb-f7b4-4fd0-b46b-15f244747a38)
+
